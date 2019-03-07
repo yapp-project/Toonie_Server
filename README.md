@@ -22,7 +22,6 @@ APP 버전 정보를 조회하는 API로 GET METHOD만 지원하고, 이 API를 
 ```
 
 ### Response
-| :-----: | :------: |
 | KEY | VALUE |
 | :-----: | ------: |
 | succces | API 호출 성공 여부 |
@@ -54,7 +53,6 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 우히나 API로 
 ```
 
 ### Response
-| :-----: | :------: |
 | KEY | VALUE |
 | :-----: | ------: |
 | succces | API 호출 성공 여부 |
