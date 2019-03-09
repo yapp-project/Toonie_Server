@@ -9,9 +9,9 @@ RESTFull API로, JSON 형식으로 데이터를 주고 받는다.
 4. Tag API
 5. Toon API
 6. Work List API
+7. My Keyword API
 
-
--------
+------- 
 
 ## App Version API
 APP 버전 정보를 조회하는 API로 GET METHOD만 지원하고, 이 API를 호출함으로서, 업데이트되어야 하는 Vesion 정보를 확인 할 수 있다.
@@ -75,10 +75,11 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
 
 -----------
 ## Keyword API
-관심키워드를 조회/입력/삭제할 수 있는 API
+키워드를 조회/입력/삭제할 수 있는 API
 
 ### METHODE : GET
 #### URL : /kewords
+전체 키워드 리스트를 조회
 
 #### Request 
 ```
@@ -101,6 +102,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
 
 ### METHOD : POST
 #### URL : /keywords
+키워드 정보(키워드-태그에 포함된 인스타툰)을 등록할 수 있는 API
 
 #### Request
 | KEY | VALUE |
@@ -131,7 +133,8 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 ```
 
 ### METHOD : GET
-#### URL : /keywords/:id
+#### URL : /keywords/:token
+해당 사용자가 등록한 관심키워드에 속한 태그와 웹툰 정보를 조회
 
 #### Request
 
@@ -194,6 +197,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 
 ### METHOD : DELETE
 #### URL : /keywords
+키워드 정보(키워드-태그에 포함된 인스타툰)을 삭제할 수 있는 API
 
 #### Request 
 | KEY | VALUE |
@@ -230,6 +234,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 
 ### METHOD : GET
 #### URL : /tags
+전체 태그 리스트를 조회하는 API
 
 #### Request
 ```
@@ -250,7 +255,8 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 ```
 
 ### METHOD : GET
-#### URL : /tag/:tag
+#### URL : /tags/:tag
+태그를 포함한 키워드와 태그에 속한 웹툰 정보를 조회하는 API
 
 #### Request
 ```
@@ -295,6 +301,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 
 ### METHOD : GET
 #### URL : /toons
+전체 인스타툰 리스트를 조회하는 API
 
 #### Request
 ```
@@ -332,6 +339,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 
 ### METHOD : GET
 #### URL : /toon/:toonID
+특정 인스타툰 정보를 조회하는 API
 
 #### Request
 ```
@@ -367,6 +375,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 
 ### METHOD : GET
 #### URL : /worklist/:token
+해당 사용자의 작품목록(북마크) 정보를 불러오는 API
 
 #### Request
 ```
@@ -421,6 +430,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 
 ### MEHTOD : POST
 #### URL : /worklist
+작품목록을 생성 또는 수정하는 API
 
 #### Request
 | KEY | VALUE |
@@ -459,6 +469,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 ```
 ### MEHTOD : DELETE
 #### URL : /worklist
+생성된 작품목록을 삭제하는 API
 
 #### Request
 | KEY | VALUE |
@@ -482,6 +493,52 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 ```
 
 
+## My KeyWord API
+
+### METHOD : GET
+#### URL : /mykeywords/:token
+해당 사용자가 관심키워드로 등록한 키워드를 조회하는 API
+
+#### Request
+```
+    N/A
+```
+#### Response
+```
+    {
+        "success" : "success",
+        "myKeywords" : ["키워드1", "키워드2", "키워드3", ...]
+    }
+```
+
+### METHOD : POST
+#### URL : /mykeywords
+해당 사용자가 관심키워드를 등록 또는 삭제할 수 있는 API
+
+#### Request
+```
+    {
+        "token" : "190303123456",
+        "myKeywords" : [
+            {
+                "keyword" : "키워드4",
+                "state" : "ADD" 
+            },
+            {
+                "keyword" : "키워드1",
+                "state" : "DELETE" 
+            }
+        ]
+    }
+```
+
+
+#### Response
+```
+    {
+        "success" : "success"
+    }
+```
 
 
 
