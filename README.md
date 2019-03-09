@@ -8,7 +8,7 @@ RESTFull API로, JSON 형식으로 데이터를 주고 받는다.
 3. Keyword API
 4. Tag API
 5. Toon API
-6. BookMark API
+6. Work List API
 
 
 -------
@@ -17,7 +17,7 @@ RESTFull API로, JSON 형식으로 데이터를 주고 받는다.
 APP 버전 정보를 조회하는 API로 GET METHOD만 지원하고, 이 API를 호출함으로서, 업데이트되어야 하는 Vesion 정보를 확인 할 수 있다.
 
 ### METHODE : GET 
-#### URL : /appVersion
+#### URL : /appversion
 
 #### Request
 ```
@@ -46,7 +46,7 @@ APP 버전 정보를 조회하는 API로 GET METHOD만 지원하고, 이 API를 
 -------
 
 ## Token API
-APP 사용자를 구분하기 위한 Token 값을 발급받기 우히나 API로 발급 받은 Token을 APP에 저장하여 사용
+APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발급 받은 Token을 APP에 저장하여 사용
 
 ### METHODE : GET
 #### URL : /token
@@ -78,7 +78,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 우히나 API로 
 관심키워드를 조회/입력/삭제할 수 있는 API
 
 ### METHODE : GET
-#### URL : /keword
+#### URL : /kewords
 
 #### Request 
 ```
@@ -100,7 +100,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 우히나 API로 
 
 
 ### METHOD : POST
-#### URL : /keyword/#keyword#
+#### URL : /keywords
 
 #### Request
 | KEY | VALUE |
@@ -131,7 +131,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 ```
 
 ### METHOD : GET
-#### URL : /keyword/#keyword#
+#### URL : /keywords/:id
 
 #### Request
 
@@ -152,14 +152,14 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
             { 
              통쾌한 : [
                            { 
-                             toonId : 1235,
+                             toonID : 1235,
                              toonName : 신의탑,
                              instaID : sinetop,
                              instaURL : www.instagram.com/sietop,
                              thumbnail : wwww.instagram.com/sietop/dsdsad
                            },
                            { 
-                             toonId : 1234,
+                             toonID : 1234,
                              toonName : 신의탑2,
                              instaID : sinetop,
                              instaURL : www.instagram.com/sietop,
@@ -169,14 +169,14 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
              },
             고양이 : [
                            { 
-                             toonId : 1236,
+                             toonID : 1236,
                              toonName : 야옹,
                              instaID : yaya,
                              instaURL : www.instagram.com/yaya,
                              thumbnail : wwww.instagram.com/yaya/dsdsad
                            },
                            {
-                             toonId : 1237,
+                             toonID : 1237,
                              toonName : 나비,
                              instaID : navi,
                              instaURL : www.instagram.com/navi,
@@ -193,7 +193,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 
 
 ### METHOD : DELETE
-#### URL : /keyword/#keyword#
+#### URL : /keywords
 
 #### Request 
 | KEY | VALUE |
@@ -229,7 +229,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 
 
 ### METHOD : GET
-#### URL : /tag
+#### URL : /tags
 
 #### Request
 ```
@@ -242,8 +242,15 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 | success | API 호출 성 여부 |
 | tags | 태그 배열 |
 
+```
+    {
+        "success" : "success"
+        "tags" : ["태그1", "태그2", ...]
+    }
+```
+
 ### METHOD : GET
-#### URL : /tag/#tag#
+#### URL : /tag/:tag
 
 #### Request
 ```
@@ -264,14 +271,14 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
         "keywords" : ["키워드1", "키워드2", "키워드3"...],
         "toons" : [
                     { 
-                    toonId : 1236,
+                    toonID : 1236,
                     toonName : 야옹,
                     instaID : yaya,
                     instaURL : www.instagram.com/yaya,
                     thumbnail : wwww.instagram.com/yaya/dsdsad
                     },
                     {
-                    toonId : 1237,
+                    toonID : 1237,
                     toonName : 나비,
                     instaID : navi,
                     instaURL : www.instagram.com/navi,
@@ -287,7 +294,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 인스타툰 정보를 가져올 수 있는 API
 
 ### METHOD : GET
-#### URL : /toon
+#### URL : /toons
 
 #### Request
 ```
@@ -305,14 +312,14 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
         "success" : "success",
          "toons" : [
                     { 
-                        toonId : 1236,
+                        toonID : 1236,
                         toonName : 야옹,
                         instaID : yaya,
                         instaURL : www.instagram.com/yaya,
                         thumbnail : wwww.instagram.com/yaya/dsdsad
                     },
                     {
-                        toonId : 1237,
+                        toonID : 1237,
                         toonName : 나비,
                         instaID : navi,
                         instaURL : www.instagram.com/navi,
@@ -324,7 +331,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 ```
 
 ### METHOD : GET
-#### URL : /toon/#toonId#
+#### URL : /toon/:toonID
 
 #### Request
 ```
@@ -344,7 +351,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 ```
     {
         "success" : "success",
-        "toonId" : "1237",
+        "toonID" : "1237",
         "toonName" : "나비",
         "instaID" : "navi",
         "instaURL" : "www.instagram.com/navi",
@@ -352,6 +359,127 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
     }
 ```
 
+
+-----------
+
+## Work List API
+작품목록(북마크)을 조회/생성/삭제할 수 있는 API
+
+### METHOD : GET
+#### URL : /worklist/:token
+
+#### Request
+```
+    N/A
+```
+
+#### Response
+| KEY | VALUE |
+| :-----: | ------: |
+| success | API 호출 성 여부 |
+| workList | 작품목록 정보  |
+
+```
+    {
+        "success" : "success",
+        "workList" : [
+            {
+                "workListName" : "전체작품목록",
+                "workListinfo" : "전체",
+                "workList : [
+                   {
+                       "toonID" : "1235",
+                       "regDate" : "20190306152130",
+                       "orderNo" : 0
+                    },
+                   {
+                       "toonID" : "1237",
+                       "regDate" : "20190307123321",
+                       "orderNo" : 1
+                   } 
+                ]
+            },
+            {
+                "workListName" : "종강은 언제?",
+                "workListinfo" : "인생 종강은 언제일까요? 교수님",
+                "workList : [
+                   {
+                       "toonID" : "1235",
+                       "regDate" : "20190306152130",
+                       "orderNo" : 0
+                    },
+                   {
+                       "toonID" : "1237",
+                       "regDate" : "20190307123321",
+                       "orderNo" : 1
+                   } 
+                ]
+            }
+        ]
+    }
+```
+
+### MEHTOD : POST
+#### URL : /worklist
+
+#### Request
+| KEY | VALUE |
+| :-----: | ------: |
+| token | token 값 |
+| workList | 작품목록 정보 |
+
+```
+    {
+        "token" : "190307123456",
+        "workListName" : "종강은 언제?",
+        "workListinfo" : "인생 종강은 언제일까요? 교수님",
+        "workList : [
+           {
+               "toonID" : "1235",
+               "regDate" : "20190306152130",
+               "state" : "DELETE"
+               "orderNo" : 0
+            },
+           {
+               "toonID" : "1237",
+               "regDate" : "20190307123321"
+               "state" : "ADD"
+               "orderNo" : 1
+           } 
+        ]
+    }
+```
+
+#### Response
+
+```
+    {
+        "success" : "success"
+    }
+```
+### MEHTOD : DELETE
+#### URL : /worklist
+
+#### Request
+| KEY | VALUE |
+| :-----: | ------: |
+| token | token 값 |
+| workListName | 작품목록 이름 |
+
+```
+    {
+        "token" : "190307123456",
+        "workListName" : "종강은 언제?"
+    }
+```
+
+#### Response
+
+```
+    {
+        "success" : "success"
+    }
+```
 
 
 
