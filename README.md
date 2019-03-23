@@ -136,6 +136,8 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 #### URL : /keywords/:token
 해당 사용자가 등록한 관심키워드에 속한 태그와 웹툰 정보를 조회
 
+통쾌한을 데이터 값으로 설정해서 보내라 "tag" : "통쾌한"
+
 #### Request
 
 ```
@@ -514,6 +516,7 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 ### METHOD : POST
 #### URL : /mykeywords
 해당 사용자가 관심키워드를 등록 또는 삭제할 수 있는 API
+state 없이 매번 새로운 리스트 전달
 
 #### Request
 ```
@@ -542,4 +545,6 @@ keyword, tag, toonID가 하나의 Primary Key로 묶임
 
 
 
+
+데이터 보내서 있으면 DELETE, 없으면 INSERT
 
