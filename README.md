@@ -1,6 +1,6 @@
 # Toonie API
 투니서버와 투니 앱클라이언트 사이에 쓰이는 API
-RESTFull API로, JSON 형식으로 데이터를 주고 받는다.
+RESTful API로, JSON 형식으로 데이터를 주고 받는다.
 
 ## API list
 1. App Vesion API -- 일단 패스
@@ -17,7 +17,7 @@ RESTFull API로, JSON 형식으로 데이터를 주고 받는다.
 ## 2.Token API
 APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발급 받은 Token을 APP에 저장하여 사용
 
-### METHODE : GET
+### METHOD : GET
 #### URL : /token
 
 #### Request
@@ -46,7 +46,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
 ## 3.Keyword API
 키워드를 조회할 수 있는 API
 
-### METHODE : GET
+### METHOD : GET
 #### URL : /kewords
 전체 키워드 리스트를 조회
 
@@ -68,7 +68,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
     }
 ```
 
-### METHODE : GET
+### METHOD : GET
 #### URL : /kewords/:keyword
 특정 키워드 정보를 조회
 
@@ -98,7 +98,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
 ## 4.MyKeyword API
 사용자가 Mykeyword를 등록하고 조회할 수 있는 API
 
-### METHODE : GET
+### METHOD : GET
 #### URL : /mykewords/:token
 해당 사용자의 Mykeyword 리스트 조회
 
@@ -121,7 +121,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
     }
 ```
 
-### METHODE : POST
+### METHOD : POST
 #### URL : /mykewords/:token
 해당 사용자의 MyKeyword 등록
 
