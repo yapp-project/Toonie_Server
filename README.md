@@ -34,7 +34,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
 
 ```
     {
-        "success" : "success",
+        "success" : success,
         "token" : "190307000001"
     }
 ```
@@ -166,6 +166,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
 
 ### METHOD : GET
 #### URL : /tags/curationtags
+나는 000한 웹툰이 보고 싶어요에서 태그 누르면 나오는 태그들 뿌릴 때 사용하면 됩니다.
 
 #### RESPONSE
 ```
@@ -183,28 +184,13 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
 ### METHOD : GET
 #### URL : /tags/token/:token
 해당 토큰 사용자가 선택한 키워드의 하위 tag 정보(태그, 웹툰정보 리스트)
+당신이 좋아할거 같아서 메뉴에 불러오면 됩니다.
 
 #### RESPONSE
 
 ```
 {
     "toonList": [
-        {
-            "toonID": "toon1",
-            "toonName": "멍멍이일기",
-            "instaID": "jo.eddy.12",
-            "instaUrl": "https://www.instagram.com/jo.eddy.12/",
-            "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/fda0ccda4355109988d711cfc6be6329/5D2B96EF/t51.2885-19/s320x320/50773796_368162570404956_1137398530726428672_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
-            "instaInfo": "멍멍이 왈왈",
-            "instafollowerCnt": "10만",
-            "instaPostCnt": "777",
-            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/350ef600705f8947e2af85dfc17e7169/5D379747/t51.2885-15/sh0.08/e35/s640x640/52153157_312323846139271_641212107355552306_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
-            "toonTagList": [
-                "IOS개발자",
-                "IOS개발자",
-                "바보"
-            ]
-        },
         {
             "toonID": "toon2",
             "toonName": "어진일기",
@@ -218,20 +204,87 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
             "toonTagList": [
                 "IOS개발자",
                 "서버개발자"
+            ],
+            "curationTagList": [
+                "IOS를 애증한다면",
+                "API 그만 만들고 싶으면"
+            ]
+        }
+    ]
+}
+```
+
+
+### METHOD : GET
+#### URL : /tags/curationtag/:curationtag
+나는 000한 웹툰이 보고 싶어요에서 태그 누르면 나오는 태그를 선택할 시 나오는 툰 정보를 불러올때 사용합니다.
+
+#### RESPONSE
+
+```
+{
+    "toonTag": "고양이를 모시고 사는",
+    "toonInfoList": [
+        {
+            "toonID": "toon13",
+            "toonName": "홍조/홍조일기",
+            "instaID": "cathongzo",
+            "instaUrl": "https://instagram.com/cathongzo?utm_source=ig_profile_share&igshid=1nkfg3yue7quz",
+            "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/b9d1c99de7ded599c4d9e6d20c9aa702/5D2F3988/t51.2885-19/s320x320/39265289_698697493814041_3439567053684473856_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "instafollowerCnt": "531",
+            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/659d815fb2b6d740b677a3c902507f2c/5D44DAAA/t51.2885-15/sh0.08/e35/c0.135.1080.1080/s640x640/53297111_427222888025147_3073937013126858222_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "toonTagList": [
+                "고양이"
+            ],
+            "curationTagList": [
+                "고양이를 모시고 사는"
             ]
         },
         {
-            "toonID": "toon3",
-            "toonName": "디자이너일기",
-            "instaID": "mulgri",
-            "instaUrl": "https://www.instagram.com/mulgri/",
-            "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/86b3f2e05240723b148c8dffaaec80d3/5D4E3261/t51.2885-19/s320x320/30602565_223943415020227_1274941375162351616_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
-            "instaInfo": "수석뒤자이너 한소른입니다.",
-            "instafollowerCnt": "100만",
-            "instaPostCnt": "423",
-            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/4aef6803b90b7c1104374452fce3f6d2/5D3648B0/t51.2885-15/sh0.08/e35/s640x640/54731932_841985386135603_3820896256715464514_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "toonID": "toon14",
+            "toonName": "재수의 연습장",
+            "instaID": "jessoo",
+            "instaUrl": "https://instagram.com/jessoo?utm_source=ig_profile_share&igshid=1gs688k9j21vo",
+            "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/78fffdb19f582bfb37d3464785104f5a/5D33386B/t51.2885-19/s320x320/23498804_143252142973715_2931208904849227776_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "instafollowerCnt": "1638",
+            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/6e373dd22d05095eb0b995c35f193905/5D3BF3FE/t51.2885-15/e35/c0.52.640.640a/54511332_419764862167329_1771643485603758896_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
             "toonTagList": [
-                "천재"
+                "고양이",
+                "커플"
+            ],
+            "curationTagList": [
+                "고양이를 모시고 사는",
+                null
+            ]
+        },
+        {
+            "toonID": "toon7",
+            "toonName": "싕싕",
+            "instaID": "seeng-seeng_",
+            "instaUrl": "https://instagram.com/seeng_seeng_?utm_source=ig_profile_share&igshid=q6vamgsrld4x",
+            "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/ceff672caf52b80705b295c2f9297e7e/5D2F8DE6/t51.2885-19/s320x320/28435478_109936443170931_4411977641255501824_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "instafollowerCnt": "760",
+            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/295d53369a6b5de714b9f320f13c6404/5D49ABB1/t51.2885-15/sh0.08/e35/s640x640/54247734_184502272528297_3012809233166541463_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "toonTagList": [
+                "고양이"
+            ],
+            "curationTagList": [
+                "고양이를 모시고 사는"
+            ]
+        },
+        {
+            "toonID": "toon8",
+            "toonName": "남씨",
+            "instaID": "namsee",
+            "instaUrl": "https://instagram.com/namsee.jpg?utm_source=ig_profile_share&igshid=10ydylfdpwubn",
+            "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/1fe9ab37908d6a00d9b97fcc5b9b8158/5D349406/t51.2885-19/s320x320/45341949_320587371877750_7103955454673289216_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "instafollowerCnt": "699",
+            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/c618edcc719e2ffb51c01db456ff6c9a/5D3C770F/t51.2885-15/sh0.08/e35/s640x640/53827131_788818868170815_4618786818930756885_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "toonTagList": [
+                "고양이"
+            ],
+            "curationTagList": [
+                "고양이를 모시고 사는"
             ]
         }
     ]
