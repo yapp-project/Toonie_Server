@@ -171,91 +171,50 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
 
 ```
 {
-    "tagInfoList": [
+    "toonList": [
         {
-            "toonTag": "IOS개발자",
-            "toonInfoList": [
-                {
-                    "toonID": "toon1",
-                    "toonName": "멍멍이일기",
-                    "instaID": "jo.eddy.12",
-                    "instaUrl": "https://www.instagram.com/jo.eddy.12/",
-                    "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/fda0ccda4355109988d711cfc6be6329/5D2B96EF/t51.2885-19/s320x320/50773796_368162570404956_1137398530726428672_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
-                    "instaInfo": "멍멍이 왈왈",
-                    "instafollowerCnt": "10만",
-                    "instaPostCnt": "777",
-                    "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/350ef600705f8947e2af85dfc17e7169/5D379747/t51.2885-15/sh0.08/e35/s640x640/52153157_312323846139271_641212107355552306_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com"
-                },
-                {
-                    "toonID": "toon2",
-                    "toonName": "어진일기",
-                    "instaID": "eozinee",
-                    "instaUrl": "https://www.instagram.com/eozinee/",
-                    "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/d896b3361fc51a587c74e42463d99158/5D3F814B/t51.2885-19/s320x320/47585461_284206972453575_9141761293089243136_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
-                    "instaInfo": "IOS 노예",
-                    "instafollowerCnt": "5",
-                    "instaPostCnt": "7",
-                    "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/dc4772d04cdadd493564f9468877d3ae/5D409CC7/t51.2885-15/e35/c92.0.366.366/38285709_2611697445522371_3687289785086377984_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com"
-                },
-                {
-                    "toonID": "toon1",
-                    "toonName": "멍멍이일기",
-                    "instaID": "jo.eddy.12",
-                    "instaUrl": "https://www.instagram.com/jo.eddy.12/",
-                    "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/fda0ccda4355109988d711cfc6be6329/5D2B96EF/t51.2885-19/s320x320/50773796_368162570404956_1137398530726428672_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
-                    "instaInfo": "멍멍이 왈왈",
-                    "instafollowerCnt": "10만",
-                    "instaPostCnt": "777",
-                    "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/350ef600705f8947e2af85dfc17e7169/5D379747/t51.2885-15/sh0.08/e35/s640x640/52153157_312323846139271_641212107355552306_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com"
-                }
+            "toonID": "toon1",
+            "toonName": "멍멍이일기",
+            "instaID": "jo.eddy.12",
+            "instaUrl": "https://www.instagram.com/jo.eddy.12/",
+            "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/fda0ccda4355109988d711cfc6be6329/5D2B96EF/t51.2885-19/s320x320/50773796_368162570404956_1137398530726428672_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "instaInfo": "멍멍이 왈왈",
+            "instafollowerCnt": "10만",
+            "instaPostCnt": "777",
+            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/350ef600705f8947e2af85dfc17e7169/5D379747/t51.2885-15/sh0.08/e35/s640x640/52153157_312323846139271_641212107355552306_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "toonTagList": [
+                "IOS개발자",
+                "IOS개발자",
+                "바보"
             ]
         },
         {
-            "toonTag": "바보",
-            "toonInfoList": [
-                {
-                    "toonID": "toon1",
-                    "toonName": "멍멍이일기",
-                    "instaID": "jo.eddy.12",
-                    "instaUrl": "https://www.instagram.com/jo.eddy.12/",
-                    "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/fda0ccda4355109988d711cfc6be6329/5D2B96EF/t51.2885-19/s320x320/50773796_368162570404956_1137398530726428672_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
-                    "instaInfo": "멍멍이 왈왈",
-                    "instafollowerCnt": "10만",
-                    "instaPostCnt": "777",
-                    "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/350ef600705f8947e2af85dfc17e7169/5D379747/t51.2885-15/sh0.08/e35/s640x640/52153157_312323846139271_641212107355552306_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com"
-                }
+            "toonID": "toon2",
+            "toonName": "어진일기",
+            "instaID": "eozinee",
+            "instaUrl": "https://www.instagram.com/eozinee/",
+            "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/d896b3361fc51a587c74e42463d99158/5D3F814B/t51.2885-19/s320x320/47585461_284206972453575_9141761293089243136_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "instaInfo": "IOS 노예",
+            "instafollowerCnt": "5",
+            "instaPostCnt": "7",
+            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/dc4772d04cdadd493564f9468877d3ae/5D409CC7/t51.2885-15/e35/c92.0.366.366/38285709_2611697445522371_3687289785086377984_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "toonTagList": [
+                "IOS개발자",
+                "서버개발자"
             ]
         },
         {
-            "toonTag": "서버개발자",
-            "toonInfoList": [
-                {
-                    "toonID": "toon2",
-                    "toonName": "어진일기",
-                    "instaID": "eozinee",
-                    "instaUrl": "https://www.instagram.com/eozinee/",
-                    "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/d896b3361fc51a587c74e42463d99158/5D3F814B/t51.2885-19/s320x320/47585461_284206972453575_9141761293089243136_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
-                    "instaInfo": "IOS 노예",
-                    "instafollowerCnt": "5",
-                    "instaPostCnt": "7",
-                    "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/dc4772d04cdadd493564f9468877d3ae/5D409CC7/t51.2885-15/e35/c92.0.366.366/38285709_2611697445522371_3687289785086377984_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com"
-                }
-            ]
-        },
-        {
-            "toonTag": "천재",
-            "toonInfoList": [
-                {
-                    "toonID": "toon3",
-                    "toonName": "디자이너일기",
-                    "instaID": "mulgri",
-                    "instaUrl": "https://www.instagram.com/mulgri/",
-                    "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/86b3f2e05240723b148c8dffaaec80d3/5D4E3261/t51.2885-19/s320x320/30602565_223943415020227_1274941375162351616_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
-                    "instaInfo": "수석뒤자이너 한소른입니다.",
-                    "instafollowerCnt": "100만",
-                    "instaPostCnt": "423",
-                    "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/4aef6803b90b7c1104374452fce3f6d2/5D3648B0/t51.2885-15/sh0.08/e35/s640x640/54731932_841985386135603_3820896256715464514_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com"
-                }
+            "toonID": "toon3",
+            "toonName": "디자이너일기",
+            "instaID": "mulgri",
+            "instaUrl": "https://www.instagram.com/mulgri/",
+            "instaThumnailUrl": "https://scontent-icn1-1.cdninstagram.com/vp/86b3f2e05240723b148c8dffaaec80d3/5D4E3261/t51.2885-19/s320x320/30602565_223943415020227_1274941375162351616_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "instaInfo": "수석뒤자이너 한소른입니다.",
+            "instafollowerCnt": "100만",
+            "instaPostCnt": "423",
+            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/4aef6803b90b7c1104374452fce3f6d2/5D3648B0/t51.2885-15/sh0.08/e35/s640x640/54731932_841985386135603_3820896256715464514_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "toonTagList": [
+                "천재"
             ]
         }
     ]
@@ -281,7 +240,12 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
             "instaInfo": "멍멍이 왈왈",
             "instafollowerCnt": "10만",
             "instaPostCnt": "777",
-            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/350ef600705f8947e2af85dfc17e7169/5D379747/t51.2885-15/sh0.08/e35/s640x640/52153157_312323846139271_641212107355552306_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com"
+            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/350ef600705f8947e2af85dfc17e7169/5D379747/t51.2885-15/sh0.08/e35/s640x640/52153157_312323846139271_641212107355552306_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "toonTagList": [
+                "IOS개발자",
+                "IOS개발자",
+                "바보"
+            ]
         },
         {
             "toonID": "toon2",
@@ -292,7 +256,11 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
             "instaInfo": "IOS 노예",
             "instafollowerCnt": "5",
             "instaPostCnt": "7",
-            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/dc4772d04cdadd493564f9468877d3ae/5D409CC7/t51.2885-15/e35/c92.0.366.366/38285709_2611697445522371_3687289785086377984_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com"
+            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/dc4772d04cdadd493564f9468877d3ae/5D409CC7/t51.2885-15/e35/c92.0.366.366/38285709_2611697445522371_3687289785086377984_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "toonTagList": [
+                "IOS개발자",
+                "서버개발자"
+            ]
         },
         {
             "toonID": "toon1",
@@ -303,7 +271,12 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
             "instaInfo": "멍멍이 왈왈",
             "instafollowerCnt": "10만",
             "instaPostCnt": "777",
-            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/350ef600705f8947e2af85dfc17e7169/5D379747/t51.2885-15/sh0.08/e35/s640x640/52153157_312323846139271_641212107355552306_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com"
+            "instaLatestPostUrl": "https://scontent-icn1-1.cdninstagram.com/vp/350ef600705f8947e2af85dfc17e7169/5D379747/t51.2885-15/sh0.08/e35/s640x640/52153157_312323846139271_641212107355552306_n.jpg?_nc_ht=scontent-icn1-1.cdninstagram.com",
+            "toonTagList": [
+                "IOS개발자",
+                "IOS개발자",
+                "바보"
+            ]
         }
     ]
 }
