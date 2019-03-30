@@ -163,6 +163,23 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
     }
 ```
 
+
+### METHOD : GET
+#### URL : /tags/curationtags
+
+#### RESPONSE
+```
+{
+    "succeess": true,
+    "curationTagList": [
+        "IOS를 애증한다면",
+        "맹구 같은",
+        "API 그만 만들고 싶으면",
+        "천재가 나오는"
+    ]
+}
+```
+
 ### METHOD : GET
 #### URL : /tags/token/:token
 해당 토큰 사용자가 선택한 키워드의 하위 tag 정보(태그, 웹툰정보 리스트)
