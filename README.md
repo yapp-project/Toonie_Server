@@ -115,7 +115,8 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
                 "IOS개발자",
                 "IOS개발자",
                 "바보"
-            ]
+            ],
+            isWorkList:true
         },
         {
             "toonID": "toon2",
@@ -130,7 +131,8 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
             "toonTagList": [
                 "IOS개발자",
                 "서버개발자"
-            ]
+            ],
+            isWorkList:true
         },
         {
             "toonID": "toon1",
@@ -146,7 +148,8 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
                 "IOS개발자",
                 "IOS개발자",
                 "바보"
-            ]
+            ],
+            isWorkList:false
         }
     ]
 }
