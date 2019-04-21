@@ -161,7 +161,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
 사용자가 Mykeyword를 등록하고 조회할 수 있는 API
 
 ### METHOD : GET
-#### URL : /mykewords/:token
+#### URL : /mykeywords/:token
 해당 사용자의 Mykeyword 리스트 조회
 
 #### Request 
@@ -184,7 +184,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
 ```
 
 ### METHOD : POST
-#### URL : /mykewords/:token
+#### URL : /mykeywords/:token
 해당 사용자의 MyKeyword 등록
 
 #### Request 
