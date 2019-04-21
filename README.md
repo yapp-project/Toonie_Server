@@ -424,6 +424,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
 
 모든 toon 정보 조회
 #### RESPONSE
+```
 {
     "toonInfoList": [
         {
@@ -475,6 +476,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
         }
     ]
 }
+```
 
 
 
@@ -483,6 +485,7 @@ APP 사용자를 구분하기 위한 Token 값을 발급받기 위한 API로 발
 
 toon id로 toon정보 조회
 #### RESPONSE
+```
         {
             "toonID": "toon1",
             "toonName": "멍멍이일기",
@@ -499,3 +502,4 @@ toon id로 toon정보 조회
                 "바보"
             ]
         }
+```
