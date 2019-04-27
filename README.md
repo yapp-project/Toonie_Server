@@ -747,8 +747,22 @@ Worklist Name이 latest면 최근본목록
 
 
 ### METHOD : Post
-#### URL : /worklist/:token/:worklistname
+#### URL : /worklist/:token
 
 사용자의 특정 worklistname 생성
+목록을 보내 해당 toon ID 해당 worklistname에 있으면 삭제, 없으면 추가
 
-#### RESPONSE
+#### REQUEST
+
+{
+    "workListName" : "자장툰"
+    "workListInfo" : "잠자기전 볼거",
+    "toonList" : ["toon1", "toon2" ...]
+}
+
+
+#### RESPONSE 
+{
+    "suceess" : true
+}
+
