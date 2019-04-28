@@ -755,9 +755,9 @@ Worklist Name이 latest면 최근본목록
 #### REQUEST
 
 {
-    "workListName" : "자장툰"
+    "workListName" : "자장툰",
     "workListInfo" : "잠자기전 볼거",
-    "toonList" : ["toon1", "toon2" ...]
+    "toonId" : "toon1"
 }
 
 
