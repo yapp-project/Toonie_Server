@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="kr.co.toonie.mapper.WorkListMapper">
+ 
+ 	<select id="selectListOfWorkList" parameterType="String" resultType="kr.co.toonie.mapper.vo.MyWorkListVo">
+		SELECT 
+			DISTINCT work_list_name "workListName"
+		FROM TB_WORK_LIST 
+		WHERE token = #{value}
+    </select>
+    
+    <select id="selectWorkList" parameterType="kr.co.toonie.mapper.vo.WorkListParamVo" resultType="kr.co.toonie.mapper.vo.MyWorkListVo">
+		SELECT 
+			work_list_name "workListName",
+			work_list_info "workListInfo",
+			toon_id "toonId",
+			reg_order "regOrder",
+			reg_dt "regDt",
+			reg_tm "regTm"
+		FROM TB_WORK_LIST 
+		WHERE token = #{token}
+		AND work_list_name = #{workListName} 
+    </select>
+    
+    
+	<select id="selectToon" parameterType="String" resultType="kr.co.toonie.mapper.vo.ToonVo">
+        SELECT
+        	a.toon_id "toonID",
+			a.toon_name "toonName",
+			a.insta_id "instaID",
+			a.insta_url "instaUrl",
+			a.insta_thumnail_url "instaThumnailUrl",
+			a.insta_info "instaInfo",
+			a.insta_follower_cnt "instaFollowerCnt",
+			a.insta_post_cnt "instaPostCnt",
+			a.insta_latest_post_url "instaLatestPostUrl"
+        FROM TB_TOON a
+        WHERE a.toon_id = #{value}
+    </select>
+    
+   	<select id="selectTagListInToon" parameterType="String" resultType="String">
+		SELECT b.toon_tag "toonTag"
+		FROM TB_TOON a
+		JOIN TB_KEYWORD b
+		ON a.toon_id = b.toon_id
+		AND a.toon_id = #{value}
+		AND b.toon_tag IS NOT NULL
+	</select>
+	
+	<select id="selectCurationTagListInToon" parameterType="String" resultType="String">
+		SELECT b.toon_curation_tag "toonCurationTag"
+		FROM TB_TOON a
+		JOIN TB_KEYWORD b
+		ON a.toon_id = b.toon_id
+		AND a.toon_id = #{value}
+		AND b.toon_curation_tag IS NOT NULL
+	</select>
+	
+	<select id="countToonInWorkList" parameterType="kr.co.toonie.mapper.vo.WorkListParamVo" resultType="int">
+	
+		SELECT count(*)
+		FROM TB_WORK_LIST
+		WHERE token = #{token}
+		AND work_list_name = #{workListName} 
+		AND toon_id = #{toonId}
+	</select>    
+	
+	<insert id="insertToonInWorkList" parameterType="kr.co.toonie.mapper.vo.WorkListParamVo">
+		INSERT INTO TB_WORK_LIST
+		(token, work_list_name, work_list_info, toon_id, reg_dt, reg_tm)
+		VALUES 
+		(#{token}, #{workListName}, #{workListInfo}, #{toonId},  DATE_FORMAT(curdate(), '%Y%m%d'), curtime()+0)
+		
+	</insert>
+	
+	<delete id="deleteToonInWorkList" parameterType="kr.co.toonie.mapper.vo.WorkListParamVo">
+		DELETE FROM TB_WORK_LIST
+		WHERE token = #{token} and work_list_name = #{workListName} and toon_id = #{toonId}
+	</delete>
+	
+	<select id ="selectFirstToonIdInWorkList" parameterType="kr.co.toonie.mapper.vo.WorkListParamVo" resultType="String">
+		<![CDATA[
+		select toon_id "toonID"
+        from (
+			select @rownum:=@rownum+1 as rownum,
+					a.toon_id 
+			from TB_WORK_LIST a, (SELECT @rownum:=0) r
+			where a.token = #{token} 
+			and a.work_list_name = #{workListName}
+            order by reg_dt, reg_tm
+		) c
+        where rownum = 1
+         ]]>
+	</select>
+	<select id="countToonListInWorkList" parameterType="kr.co.toonie.mapper.vo.WorkListParamVo" resultType="int">
+	
+		SELECT count(*)
+		FROM TB_WORK_LIST
+		WHERE token = #{token}
+		AND work_list_name = #{workListName}
+	</select>    
+   
+    
+</mapper>

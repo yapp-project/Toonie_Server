@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="kr.co.toonie.mapper.TokenMapper">
+ 
+    <select id="selectNow" resultType="String">
+        SELECT NOW()
+    </select>
+    
+    <insert id="insertToken" parameterType="String">
+     	INSERT INTO TB_TOKEN
+     		(token, reg_dt, reg_tm) 
+     	VALUES (#{value}, DATE_FORMAT(curdate(), '%Y%m%d'), curtime()+0)
+    </insert>
+    <insert id="insertDefaultWorkList" parameterType="String">
+    insert INTO TB_WORK_LIST (token, work_list_name, toon_id)
+	VALUE (#{value}, 'default', 'default');
+    </insert>
+    
+    <insert id="insertLatestWorkList" parameterType="String">
+    insert INTO TB_WORK_LIST (token, work_list_name, toon_id)
+	VALUE (#{value}, 'latest', 'default');
+    </insert>
+    
+    
+</mapper>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="kr.co.toonie.mapper.ToonMapper">
+ 
+    <select id="selectToonList" resultType="kr.co.toonie.mapper.vo.ToonVo">
+        SELECT
+        	a.toon_id "toonID",
+			max(a.toon_name) "toonName",
+			max(a.insta_id) "instaID",
+			max(a.insta_url) "instaUrl",
+			max(a.insta_thumnail_url) "instaThumnailUrl",
+			max(a.insta_info) "instaInfo",
+			max(a.insta_follower_cnt) "instaFollowerCnt",
+			max(a.insta_post_cnt) "instaPostCnt",
+			max(a.insta_latest_post_url) "instaLatestPostUrl"
+        FROM TB_TOON a
+        JOIN TB_KEYWORD b
+        ON a.toon_id = b.toon_id
+        AND b.toon_tag != 'default'
+        group by a.toon_id
+        
+    </select>
+    
+    <select id="selectToon" parameterType="String" resultType="kr.co.toonie.mapper.vo.ToonVo">
+        SELECT
+        	a.toon_id "toonID",
+			a.toon_name "toonName",
+			a.insta_id "instaID",
+			a.insta_url "instaUrl",
+			a.insta_thumnail_url "instaThumnailUrl",
+			a.insta_info "instaInfo",
+			a.insta_follower_cnt "instaFollowerCnt",
+			a.insta_post_cnt "instaPostCnt",
+			a.insta_latest_post_url "instaLatestPostUrl"
+        FROM TB_TOON a
+        WHERE a.toon_id = #{value}
+        AND a.toon_id != 'default'
+    </select>
+    
+   	<select id="selectTagListInToon" parameterType="String" resultType="String">
+		SELECT b.toon_tag "toonTag"
+		FROM TB_TOON a
+		JOIN TB_KEYWORD b
+		ON a.toon_id = b.toon_id
+		AND a.toon_id = #{value}
+		AND b.toon_tag != 'default'
+	</select>
+	
+	<select id="selectCurationTagListInToon" parameterType="String" resultType="String">
+		SELECT b.toon_curation_tag "toonCurationTag"
+		FROM TB_TOON a
+		JOIN TB_KEYWORD b
+		ON a.toon_id = b.toon_id
+		AND a.toon_id = #{value}
+		AND b.toon_curation_tag is not null
+		AND b.toon_tag != 'default'
+	</select>
+	
+	<select id="selectToonInKeyword" parameterType="String" resultType="kr.co.toonie.mapper.vo.ToonVo">
+        SELECT
+        	a.toon_id "toonID",
+			max(a.toon_name) "toonName",
+			max(a.insta_id) "instaID",
+			max(a.insta_url) "instaUrl",
+			max(a.insta_thumnail_url) "instaThumnailUrl",
+			max(a.insta_info) "instaInfo",
+			max(a.insta_follower_cnt) "instaFollowerCnt",
+			max(a.insta_post_cnt) "instaPostCnt",
+			max(a.insta_latest_post_url) "instaLatestPostUrl"
+        FROM TB_TOON a
+        JOIN TB_KEYWORD b
+        ON a.toon_id = b.toon_id
+        AND b.toon_tag != 'default'
+        AND b.toon_keyword =  #{value}
+        group by a.toon_id
+	</select>
+    
+</mapper>
+

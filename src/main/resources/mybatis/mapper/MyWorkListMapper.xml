@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="kr.co.toonie.mapper.MyWorkListMapper">
+ 
+    <select id="selectMyWorkList" parameterType="kr.co.toonie.mapper.vo.MyWorkListVo" resultType="kr.co.toonie.mapper.vo.MyWorkListVo">
+    SELECT a.work_list_name "workListName", 
+		   a.work_list_info "workListInfo",
+           a.toon_id "toonID",
+           a.reg_dt "regDt",
+           a.reg_tm "regTm",
+           a.reg_order "regOrder",
+           b.toon_name "toonName",
+           b.insta_latest_post_url "toonLatestPostUrl"
+    FROM TB_WORK_LIST a
+    JOIN TB_TOON b
+    ON a.toon_id = b.toon_id
+    where a.work_list_name = #{workListName}
+    AND a.tooken = #{token}
+    </select>
+    
+    <insert id="insertMyworkList" parameterType="kr.co.toonie.mapper.vo.MyWorkListVo">
+	INSERT INTO tb_work_list
+		(token, work_list_name, work_list_info, toon_id, reg_dt, reg_tm, reg_order)
+	VALUES (#{token}, #{workListName}, #{workListInfo}, #{toonID}, DATE_FORMAT(curdate(), '%Y%m%d'), curtime()+0, #{regOrder})
+    </insert>
+    
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="kr.co.toonie.mapper.MyKeywordMapper">
+ 
+    <select id="selectMyKeywordList" parameterType="String" resultType="String">
+		SELECT
+			toon_keyword "toonKeyword"
+		FROM TB_MY_KEYWORD
+		WHERE token = #{value}
+	</select>	
+	
+    <insert id="insertMyKeyword" parameterType="kr.co.toonie.mapper.vo.TokenVo">
+     	insert into TB_MY_KEYWORD (token, toon_keyword, reg_dt, reg_tm)
+		values (#{token}, #{toonKeyword}, DATE_FORMAT(curdate(), '%Y%m%d'), curtime()+0)
+    </insert>
+    
+    
+    <update id="deleteMyKeyword" parameterType="kr.co.toonie.mapper.vo.TokenVo">
+     	DELETE FROM TB_MY_KEYWORD
+     	WHERE token = #{token} and toon_keyword = #{toonKeyword}
+     	
+    </update>
+    
+	
+    
+
+</mapper>
